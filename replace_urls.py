@@ -1,10 +1,10 @@
 import sys
 
 def relacingtexts(old,new):
-    with open('/var/www/html/index.html', 'r') as file :
+	with open('/var/www/html/index.html', 'r') as file :
   		filedata = file.read()
 	
-	# Replace the target string
+    	# Replace the target string
 	filedata = filedata.replace(old, new)
 	
 	# Write the file out again
@@ -13,6 +13,6 @@ def relacingtexts(old,new):
 
 
 if __name__ == "__main__":
-    new = str(sys.argv[1])
-    old = "images"
-    relacingtexts(old, new)
+    	new = str(sys.argv[1])
+    	old = "images"
+    	relacingtexts(old, new)
