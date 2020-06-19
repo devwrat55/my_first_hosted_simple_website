@@ -9,7 +9,7 @@ def relacingtexts(old,new):
 	
 	# Write the file out again
 	with open('/var/www/html/index.html', 'w') as file:
-	  file.write(filedata)
+	  	file.write(filedata)
 
 
 if __name__ == "__main__":
