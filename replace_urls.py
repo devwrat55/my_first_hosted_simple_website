@@ -1,21 +1,18 @@
 import sys
 def replacingtexts(old1,new1):
 	try:
-		with open('/var/www/html/index.html', 'r') as file :
-	  		filedata = file.read()		
-		# Replace the target string
-		filedata = filedata.replace(old1, new1)
-		# Write the file out again
-		with open('/var/www/html/index.html', 'w') as file:
-		    	file.write(filedata)
+		f1 = open('/var/www/html/index.html', 'r')
+		f2 = open('/var/www/html/index_copy.html', 'w')
+		for line in f1:
+			f2.write(line.replace(old1, new1))
+		f1.close()
+		f2.close()
+
+		import os
+		os.remove("/var/www/html/index.html")
+		os.rename('/var/www/html/index_copy.html', '/var/www/html/index.html')	
 	except:
-		try:
-			with open('/var/www/html/index.html') as f:
-			    newText=f.read().replace(old1, new1)
-			with open('/var/www/html/index.html', "w") as f:
-			    f.write(newText)
-		except:
-			pass
+		pass
 
 if __name__ == "__main__":
     	new = str(sys.argv[1])
