@@ -1,7 +1,7 @@
 import sys
 def replacingtexts(old1,new1):
 	try:
-	    with open('/var/www/html/index.html', 'r') as file :
+		with open('/var/www/html/index.html', 'r') as file :
 	  		filedata = file.read()		
 		# Replace the target string
 		filedata = filedata.replace(old1, new1)
