@@ -7,7 +7,7 @@ def replacingtexts(old1,new1):
 		filedata = filedata.replace(old1, new1)
 		# Write the file out again
 		with open('/var/www/html/index.html', 'w') as file:
-		    file.write(filedata)
+		    	file.write(filedata)
 	except:
 		try:
 			with open('/var/www/html/index.html') as f:
@@ -18,6 +18,6 @@ def replacingtexts(old1,new1):
 			pass
 
 if __name__ == "__main__":
-    new = str(sys.argv[1])
-    old = "images"
-    replacingtexts(old, new)
+    	new = str(sys.argv[1])
+    	old = "images"
+    	replacingtexts(old, new)
